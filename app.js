@@ -18,6 +18,17 @@ function reverseString2(str) {
   return console.log("ReverseString 2: ", strReverse)
 }
 
+// TODO Clean object
+// given an object only return the prop asked for, not any of the extra givens
+//  6 => 3 3
+//  7 => 3 4
+function splitNumber(num) {
+  if (num % 2 == 0) {
+    return `${num / 2} ${num / 2}`
+  }
+  return `${(num / 2) - .5} ${(num / 2) + .5}`
+}
+
 // TODO add all numbers in array
 // input [1,4,5,10]
 // output 20
