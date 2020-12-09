@@ -19,7 +19,7 @@ function reverseString2(str) {
 }
 
 // TODO Clean object
-// given an object only return the prop asked for, not any of the extra givens
+// given number split it in half (whole integers) and return them
 //  6 => 3 3
 //  7 => 3 4
 function splitNumber(num) {
@@ -54,7 +54,6 @@ function spareChange(price, coins) {
 }
 
 // MEDIUM ONES -------------------------------------------
-
 // REVIEW AnnaGrams
 // given two words return true if they are annagrams of eachother
 // input - slime, limes => true
@@ -214,7 +213,7 @@ function radarScanNumAll(arr) {
 
 // FIXME IS Spy NO (INCLUDES) METHOD
 function isSpyNoIncludes(arr) {
-  let spys = []
+  let spys = {}
   for (let i = 0; i < arr.length; i++) {
     let person = arr[i].toLowerCase().split(' ').join('')
     let traitor = { s: false, p: false, y: false }
@@ -228,7 +227,7 @@ function isSpyNoIncludes(arr) {
           break;
       }
     }
-    spys.push(traitor.s && traitor.p && traitor.y)
+    spys[person] = (traitor.s && traitor.p && traitor.y)
   }
   return console.log("Is Spy no Includes Result", spys)
 }
@@ -265,5 +264,4 @@ function radarScanHard(grid, ping) {
 
 }
 
-radarScanHard(3, "oooooooooxoo")
 
