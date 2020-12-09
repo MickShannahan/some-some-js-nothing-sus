@@ -9,6 +9,7 @@ function reverseString(str) {
   return console.log("Reverse String 1:", strReverse)
 }
 
+
 function reverseString2(str) {
   let strReverse = ''
   for (let i = str.length - 1; i > 0; i--) {
@@ -18,16 +19,20 @@ function reverseString2(str) {
   return console.log("ReverseString 2: ", strReverse)
 }
 
-// TODO Clean object
-// given number split it in half (whole integers) and return them
-//  6 => 3 3
-//  7 => 3 4
-function splitNumber(num) {
-  if (num % 2 == 0) {
-    return `${num / 2} ${num / 2}`
+// TODO Capitalize Letters
+// Given a word and a capital letter replace all lowercase instances of the letter with uppercase instances
+// input- bananas, N => baNaNas
+function capitalizeLetters(word, char) {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] == char.toLower()) {
+      word[i] = char
+    }
   }
-  return `${(num / 2) - .5} ${(num / 2) + .5}`
+  return word
 }
+
+
+
 
 // TODO add all numbers in array
 // input [1,4,5,10]
@@ -53,7 +58,35 @@ function spareChange(price, coins) {
   return console.log("spareChange result ", money >= price)
 }
 
+// REVIEW Split a number
+// Given a number return it split in two
+// input 6 => [3,3]
+// input 7 => [3,4]
+
+function evenSplit(num) {
+  if (num % 2 == 0) {
+    return [num / 2, num / 2]
+  } else {
+    return [(num - 1) / 2, (num + 1) / 2]
+  }
+}
+// one line solution
+// return [Math.floor(num/2), Math.ceil(num/2)]
+
+
 // MEDIUM ONES -------------------------------------------
+// REVIEW Capitalize name
+// Given a first and last name return them Capitalized
+// input - "mick shannahan" => "Mick Shannahan"
+function capitalizeName(str) {
+  let firstName = str.split(" ")[0]
+  let lastName = str.split(" ")[1]
+  firstName.splice(0, 1, firstName[0].toUpper())
+  lastName.splice(0, 1, lastName[0].toUpper())
+  return firstName + " " + lastName
+}
+
+
 // REVIEW AnnaGrams
 // given two words return true if they are annagrams of eachother
 // input - slime, limes => true
@@ -75,7 +108,6 @@ function annagrams(str1, str2) {
     return console.log("anangrams result", true)
   }
 }
-
 
 
 // REVIEW how many iterations (is meh)
@@ -116,7 +148,7 @@ function isSpyEasy(str) {
     } else if (char = 'y') {
       y = true
     }
-    return console.log("Is Spy Easy Resutl", (s && p && y))
+    return console.log("Is Spy Easy Result", (s && p && y))
   }
 }
 
@@ -206,6 +238,22 @@ function radarScanNumAll(arr) {
   return console.log("Radar All Enemies Result ", enemies)
 }
 
+// NOTE Range Sum
+// given a array of numbers, determine if any TWO numbers added together equal any other number
+// input [1,5,16,9,7] => true, 7 + 9 = 16
+function rangeSum(arr) {
+  let max = arr.sort((a, b) => a - b)[arr.length - 1]
+  for (let i = 0; i < arr.length; i++) {
+    let num1 = arr[i]
+    for (let j = 0; j < arr.length; j++) {
+      let num2 = arr[j]
+      if (num1 + num2 == max) {
+        return true
+      }
+    }
+  }
+  return false
+}
 
 
 
