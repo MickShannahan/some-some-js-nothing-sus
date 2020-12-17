@@ -32,8 +32,6 @@ function capitalizeLetters(word, char) {
 }
 
 
-
-
 // TODO add all numbers in array
 // input [1,4,5,10]
 // output 20
@@ -149,6 +147,17 @@ function isSpyEasy(str) {
       y = true
     }
     return console.log("Is Spy Easy Result", (s && p && y))
+  }
+}
+
+// REVIEW Wizard Fight WIP
+// Given and array of numbers (representing wizards), and a complicated set of rules, return the number of the winning wizard
+// rules, Highest number wins unless evenly divisible by lower number
+// input - [7,14,2,8,9] => 7 beats 14, 2 beats 7, 8 beats 2, 8 beats 9 => 8 wins
+function wizardFight(wizards) {
+  let w = wizards[0]
+  for (let i = 1; i < wizards.length; i++) {
+    wizards[i] > w ? 
   }
 }
 
