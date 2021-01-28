@@ -56,7 +56,9 @@ function spareChange(price, coins) {
   return console.log("spareChange result ", money >= price)
 }
 
-// REVIEW Split a number
+
+
+// TODO Split a number
 // Given a number return it split in two
 // input 6 => [3,3]
 // input 7 => [3,4]
@@ -163,6 +165,25 @@ function wizardFight(wizards) {
 
 
 // MEDIUM HARD -------------------------------------------
+
+// NOTE Jeep Climber
+// given a string of #'s (rocks) and the size of a Jeep (the jeep strings length) determine if the Jeep can climb the rocks
+// input "___#_###__###___##__", "gJEEPg:" => true, the rocks are small enough for the jeep to cross
+// input "____###__########___#_##" => false, the rock is too wide for the Jeep to climb
+function jeepClimber(str, car){
+  let rock = 0
+  let jeep = car.length
+  for( let i = 0; i < str.length; i++){
+    if( str[i] == '#'){
+      rock++
+      if (rock > jeep){
+        return console.log("Jeep Climber", false)
+      }
+    } else {rock = 0}
+  }
+  return console.log("Jeep Climber", true)
+}
+
 // NOTE Bang
 // input ".........Bang", ".......Bang"
 // output "cowboy 2 shot first"
