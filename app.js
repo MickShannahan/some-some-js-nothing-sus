@@ -285,6 +285,10 @@ function rangeSum(arr) {
   return false
 }
 
+// NOTE Number Mask
+// Given a string mask and a un-formatted string, format the string to the mask
+
+
 
 
 // HARD ONES ---------------------------------------------------
@@ -330,7 +334,7 @@ function radarScanHard(grid, ping) {
 
   for (let i = 0; i < ping.length; i++) {
     let cord = ping[i]
-    if (cord == 'x') {
+    if (cord == 1) {
       return console.log("Radar Hard Result ", col + 1, row + 1)
     }
     col++
